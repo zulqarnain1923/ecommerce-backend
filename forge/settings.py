@@ -27,7 +27,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 DEBUG = os.environ['DEBUG']
 
 ALLOWED_HOSTS = [h.strip() for h in os.environ['ALLOWED_HOSTS'].split(',')]
-
+# ALLOWED_HOSTS=['.railway.app','localhost','127.0.0.1','gym-life-ecommerce-kx4m.vercel.app']
 
 # Application definition
 
@@ -149,6 +149,7 @@ AUTH_USER_MODEL='user.User'
 
 CORS_ALLOWED_ORIGINS=[
     'http://localhost:5173',
+    'https://gym-life-ecommerce-kx4m.vercel.app',
 ]
 
 STATIC_URL = '/static/'
