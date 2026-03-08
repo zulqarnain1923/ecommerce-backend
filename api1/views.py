@@ -33,7 +33,8 @@ def getdata(request, id=None):
         maxprice = request.GET.get('maxprice')
         catagory= request.GET.get('catagory')
         name=request.GET.get('name')
-        print(name)
+        quantity=request.GET.get('quantity')
+        
         data = []
 
 # dashboard per prduct return
@@ -72,6 +73,8 @@ def getdata(request, id=None):
 
 
 # product data return request
+        if quantity:
+            products=Products.objects.all()[:int(quantity)]
         for p in products:
             image = []
             img = Images.objects.filter(product_id=p.pr_id)
